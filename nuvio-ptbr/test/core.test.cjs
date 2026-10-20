@@ -186,6 +186,20 @@ test('TMDB-capable source works without a key; alternate endpoints keep their fu
   for (const url of ['http://alt.example','https://alt.example?token=x','https://alt.example/../x','https://user:pass@alt.example']) assert.throws(() => core.sourceStreamUrl(source,movie,url),{code:'INVALID_SOURCE_URL'});
 });
 
+test('King VOD refreshes cached stream responses while preserving signed playback data',async()=>{
+  const king=sources.find(s=>s.id==='kingvod');
+  let requested='';
+  const original='https://media.example/playlist.m3u8?signature=unchanged';
+  const result=await core.search({id:movie.id,type:'movie'},[king],environment(async url=>{
+    requested=url;
+    return response({streams:[stream({url:original,behaviorHints:{proxyHeaders:{request:{Cookie:'source-issued-cookie'}}}})]});
+  }),{});
+  assert.match(requested,/\/tt0133093\.json\?aurora_refresh=\d+$/);
+  assert.equal(result.streams[0].url,original);
+  assert.equal(result.streams[0].headers.Cookie,'source-issued-cookie');
+  assert.ok(!core.sourceStreamUrl(source,movie).includes('aurora_refresh'));
+});
+
 test('result ordering and caps reflect audio and real quality, with visible stable ranks', async () => {
   const list = [stream({name:'4K · Dublado'}),stream({url:'https://m.example/1080',name:'1080p · Dublado'}),stream({url:'https://m.example/unknown',name:'Dublado'}),stream({url:'https://m.example/pt',name:'1080p',title:'🌎 Português'})];
   const result = await core.search({id:movie.id,type:'movie'},[source],environment(async()=>response({streams:list})),{maxResults:3});

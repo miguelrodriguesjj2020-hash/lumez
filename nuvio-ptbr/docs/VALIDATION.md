@@ -2,13 +2,13 @@
 
 ## Resultado técnico
 
-`npm run verify`: **27 testes aprovados**, incluindo o bundle distribuído em sandbox sem require, URL ou Buffer; três IDs simples e três IDs compostos usados pelo Nuvio; settings; áudio versus legendas; episódios; cabeçalhos; deduplicação; falhas e prazos.
+`npm run verify` na versão 1.0.1: **28 testes aprovados**, incluindo o bundle distribuído em sandbox sem require, URL ou Buffer; três IDs simples e três IDs compostos usados pelo Nuvio; settings; áudio versus legendas; episódios; cabeçalhos; deduplicação; falhas, prazos e renovação do cache.
 
 Manifestos públicos das três fontes responderam HTTP 200 e anunciaram o recurso `stream`.
 
 ## Matriz real de fontes
 
-Execução do arquivo distribuído com HTTP real em Node 24.19.0, em 20/10/2026 às 03:45 UTC. Relatório completo sem URLs: [validation-2026-10-20.json](validation-2026-10-20.json).
+Execução do arquivo distribuído 1.0.0 com HTTP real em Node 24.19.0, em 20/10/2026 às 03:45 UTC. Relatório completo sem URLs: [validation-2026-10-20.json](validation-2026-10-20.json). A atualização 1.0.1 abaixo corrige a renovação de respostas King VOD sem mudar os filtros dessa matriz.
 
 | Filme/episódio | BsCine | King VOD | FrostStream |
 | --- | ---: | ---: | ---: |
@@ -33,6 +33,14 @@ Uma requisição independente via Python ao MP4 da BsCine respondeu HTTP 206 com
 Um init MP4 da playlist King VOD foi reconhecido pelo ffprobe como vídeo H.264 e áudio AAC. A tag de idioma era `und` (indeterminado). As playlists amostradas não declararam idioma de faixa. Não houve confirmação por escuta de PT-BR.
 
 As sondagens não baixaram filmes completos. O plugin no Nuvio não faz essas requisições adicionais de vídeo; oferece as alternativas e identifica a evidência declarada.
+
+## Correção de cache · 1.0.1
+
+A comparação independente encontrou uma resposta de streams com `Age: 971` e `Cache-Control: max-age=14400`, cuja autorização de reprodução retornou 410. A mesma consulta renovada retornou uma nova autorização e playlist HLS HTTP 200. São dados novos emitidos pelo serviço; não houve alteração ou fabricação de cookies/assinaturas.
+
+O Aurora agora renova essa consulta King VOD por uma chave de cache de um minuto. A revalidação do bundle 1.0.1 para Matrix retornou cinco opções (três fontes) e playlist King VOD HTTP 200. Breaking Bad S01E01 retornou quatro opções e playlist King VOD HTTP 200. BsCine e Frost ainda apresentaram falhas de socket no transporte Node desta rede. Veja [cache-refresh-1.0.1.json](cache-refresh-1.0.1.json) e [episode-refresh-1.0.1.json](episode-refresh-1.0.1.json), com hash do bundle atualizado.
+
+O primeiro workflow independente no GitHub também aprovou os testes e o diagnóstico de fontes: [execução 39366227865](https://github.com/miguelrodriguesjj2020-hash/lumez/actions/runs/39366227865). Naquela rede, King VOD retornou playlist HTTP 200, BsCine excedeu o prazo de conexão de mídia e Frost não retornou opções. A aprovação do workflow exige resultado de busca para o caso testado; não significa que todas as fontes ou mídias passaram.
 
 ## Ainda depende do aparelho
 

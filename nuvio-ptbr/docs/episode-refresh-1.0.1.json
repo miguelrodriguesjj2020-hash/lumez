@@ -1,0 +1,204 @@
+{
+  "testedAt": "2026-10-20T03:51:03.422Z",
+  "version": "1.0.1",
+  "runtime": "v24.19.0",
+  "bundleSha256": "074087c035e6bd7e09d9e0fdb0a5905c4e3c87ed9b4b49a40bc8319c040a0867",
+  "test": "Distributed plugin in VM with real HTTP transport; no device playback",
+  "manifests": [
+    {
+      "source": "bscine",
+      "status": 200,
+      "id": "com.bsweb.bscine",
+      "version": "1.0.0",
+      "types": [
+        "movie",
+        "series"
+      ],
+      "usable": true
+    },
+    {
+      "source": "kingvod",
+      "status": 200,
+      "id": "org.kingvod.node",
+      "version": "1.0.1",
+      "types": [
+        "movie",
+        "series"
+      ],
+      "usable": true
+    },
+    {
+      "source": "frost",
+      "status": 200,
+      "id": "com.froststream",
+      "version": "2.2.8",
+      "types": [
+        "movie",
+        "series"
+      ],
+      "usable": true
+    }
+  ],
+  "results": [
+    {
+      "case": "tt0903747:1:1",
+      "id": "tt0903747:1:1",
+      "type": "series",
+      "source": "bscine",
+      "diagnostics": {
+        "version": "1.0.1",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "bscine",
+            "name": "BsCine",
+            "status": "ok",
+            "received": 1,
+            "accepted": 1,
+            "rejected": {},
+            "durationMs": 143
+          }
+        ],
+        "totals": {
+          "received": 1,
+          "accepted": 1,
+          "duplicates": 0,
+          "returned": 1
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt0903747",
+          "kind": "imdb",
+          "type": "series",
+          "season": 1,
+          "episode": 1
+        },
+        "durationMs": 145
+      },
+      "audioLabels": [
+        "Dublado informado pela fonte"
+      ],
+      "qualities": [
+        "1080p"
+      ],
+      "probes": [
+        {
+          "result": "network-error",
+          "code": "UND_ERR_SOCKET"
+        }
+      ]
+    },
+    {
+      "case": "tt0903747:1:1",
+      "id": "tt0903747:1:1",
+      "type": "series",
+      "source": "kingvod",
+      "diagnostics": {
+        "version": "1.0.1",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "kingvod",
+            "name": "King VOD",
+            "status": "ok",
+            "received": 1,
+            "accepted": 1,
+            "rejected": {},
+            "durationMs": 1550
+          }
+        ],
+        "totals": {
+          "received": 1,
+          "accepted": 1,
+          "duplicates": 0,
+          "returned": 1
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt0903747",
+          "kind": "imdb",
+          "type": "series",
+          "season": 1,
+          "episode": 1
+        },
+        "durationMs": 1552
+      },
+      "audioLabels": [
+        "Dublado informado pela fonte"
+      ],
+      "qualities": [
+        "unknown"
+      ],
+      "probes": [
+        {
+          "status": 200,
+          "result": "hls-playlist",
+          "bytesRead": 18289,
+          "audioLanguages": []
+        }
+      ]
+    },
+    {
+      "case": "tt0903747:1:1",
+      "id": "tt0903747:1:1",
+      "type": "series",
+      "source": "frost",
+      "diagnostics": {
+        "version": "1.0.1",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "frost",
+            "name": "FrostStream",
+            "status": "ok",
+            "received": 2,
+            "accepted": 2,
+            "rejected": {},
+            "durationMs": 484
+          }
+        ],
+        "totals": {
+          "received": 2,
+          "accepted": 2,
+          "duplicates": 0,
+          "returned": 2
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt0903747",
+          "kind": "imdb",
+          "type": "series",
+          "season": 1,
+          "episode": 1
+        },
+        "durationMs": 485
+      },
+      "audioLabels": [
+        "Português informado; variante incerta"
+      ],
+      "qualities": [
+        "720p"
+      ],
+      "probes": [
+        {
+          "result": "network-error",
+          "code": "UND_ERR_SOCKET"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "cases": 1,
+    "sourceRequests": 3,
+    "casesWithResults": 1,
+    "sourceResponsesWithResults": 3,
+    "returnedStreams": 4,
+    "mediaSamples": {
+      "network-error": 2,
+      "hls-playlist": 1
+    }
+  }
+}

@@ -9,6 +9,7 @@ const args = process.argv.slice(2);
 const option = key => { const at = args.indexOf(key); return at < 0 ? undefined : args[at + 1]; };
 const sources = JSON.parse(await readFile(path.join(root,'src/sources.json'),'utf8'));
 const bundle = await readFile(path.join(root,'providers/aurora.js'),'utf8');
+const pkg = JSON.parse(await readFile(path.join(root,'package.json'),'utf8'));
 const matrix = args.includes('--matrix');
 const probe = args.includes('--probe');
 const cases = matrix ? JSON.parse(await readFile(path.join(root,'test/live-cases.json'),'utf8')) : [{
@@ -90,7 +91,7 @@ async function runCase(item,source) {
 }
 
 const report={
-  testedAt:new Date().toISOString(),version:'1.0.0',runtime:process.version,
+  testedAt:new Date().toISOString(),version:pkg.version,runtime:process.version,
   bundleSha256:createHash('sha256').update(bundle).digest('hex'),
   test:'Distributed plugin in VM with real HTTP transport; no device playback',
   manifests:await pool(sources.map(s=>()=>checkManifest(s)),3),

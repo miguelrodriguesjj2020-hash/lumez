@@ -13,6 +13,7 @@
     "scraperId": "aurora-ptbr-kingvod-v1",
     "name": "King VOD",
     "baseUrl": "https://da5f663b4690-kingvod.baby-beamup.club",
+    "refreshEverySeconds": 60,
     "types": ["movie", "series"],
     "idKinds": ["imdb"],
     "dubLocale": "pt-BR"

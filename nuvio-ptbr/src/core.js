@@ -1,7 +1,7 @@
 'use strict';
 
 // Original dependency-free engine. Runs in Node and in Nuvio's JS sandbox.
-var VERSION = '1.0.0';
+var VERSION = '1.0.1';
 var MAX_BODY = 950000;
 var MAX_CANDIDATES = 150;
 
@@ -286,7 +286,12 @@ function sourceStreamUrl(source, media, override) {
   if (!kind) throw fault('ID_UNSUPPORTED');
   var id = kind === 'imdb' ? media.imdb : 'tmdb:' + media.tmdb;
   if (media.type === 'series') id += ':' + media.season + ':' + media.episode;
-  return baseUrl(override || source.baseUrl) + '/stream/' + media.type + '/' + encodeURIComponent(id) + '.json';
+  var url = baseUrl(override || source.baseUrl) + '/stream/' + media.type + '/' + encodeURIComponent(id) + '.json';
+  // King VOD's HTTP cache advertised four hours while its playback cookie
+  // expired sooner. A minute bucket requests a fresh response, without changing
+  // or forging any media URL, cookie or playback authorization.
+  if (source.refreshEverySeconds) url += '?aurora_refresh=' + Math.floor(Date.now() / (source.refreshEverySeconds * 1000));
+  return url;
 }
 
 async function search(input, sources, env, rawSettings) {

@@ -23,6 +23,8 @@ Para TMDB, tenta resolver o IMDb com a chave fornecida pelo app; a fonte compat�
 
 O motor consolidado também permite consultar várias fontes e deduplicar em uma chamada (usado por consumidores do módulo sem `SCRAPER_ID`). Na instalação padrão, a deduplicação ocorre dentro de cada scraper. Não há estado compartilhado entre runtimes do Nuvio para remover duplicatas entre os três fornecedores.
 
+King VOD: o teste real encontrou HTTP `Cache-Control: max-age=14400` e resposta antiga cujo cookie de reprodução retornava 410. Uma consulta renovada trouxe uma playlist HTTP 200. Desde 1.0.1, somente essa fonte recebe `?aurora_refresh=<minuto>` na consulta de streams. Não alteramos URLs, cookies ou assinaturas de mídia; usamos os dados novos emitidos pelo próprio serviço.
+
 ## Áudio e identidade
 
 Dados de áudio específicos têm precedência sobre rótulos. Rótulos de legendas são removidos da inferência; `DUAL`, `MULTI`, BRRip e nomes portugueses não comprovam PT-BR. `Dublado` é uma declaração do serviço brasileiro, não uma inspeção de áudio. Português genérico não é promovido para brasileiro.

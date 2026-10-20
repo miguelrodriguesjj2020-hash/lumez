@@ -23,6 +23,7 @@ Não exige servidor seu, chave de debrid ou alteração dos catálogos. Seus out
 - Prioriza 1080p por padrão. Qualidade ausente continua como **Qualidade não informada**.
 - Rejeita identificadores/episódios explicitamente divergentes, torrents sem URL HTTP e resultados que exigem DRM.
 - Registra contagens e motivos de descarte sem incluir URLs de mídia ou chaves no relatório do Aurora.
+- Renova as consultas King VOD para reduzir o retorno de autorizações de reprodução vencidas por cache do serviço.
 
 O plugin não gera nem injeta faixas de dublagem. Disponibilidade e reprodução dependem dos serviços consultados. Não há promessa de dublagem para todo o catálogo ou para uma porcentagem ainda não medida.
 
@@ -36,6 +37,8 @@ O plugin não gera nem injeta faixas de dublagem. Disponibilidade e reprodução
 | Áudio português não informado | Sem evidência suficiente; aparece somente no modo Todos |
 
 Nenhum desses rótulos significa idioma confirmado por escuta. Bandeira ou PT-BR associados somente a **legendas**, sinopse em português e `DUAL` isolado não contam como áudio português.
+
+Se o arquivo tiver várias faixas, escolha Português/Português Brasil no menu de áudio do player. O plugin oferece o link; não controla a seleção de faixas do Nuvio.
 
 ## Ajustes
 
@@ -56,7 +59,7 @@ IDs TMDB numéricos usam a chave TMDB já fornecida pelo app para encontrar o IM
 
 ## Se a fonte desaparecer ou não tocar
 
-O Nuvio oculta fornecedores que terminam sem streams. Isso também ocorre se o filtro descartar tudo; o repositório continua instalado. Tente outro fornecedor do Aurora. Um link retornado pode expirar ou falhar na reprodução mesmo com o serviço de busca disponível.
+O Nuvio oculta fornecedores que terminam sem streams. Isso também ocorre se o filtro descartar tudo; o repositório continua instalado. Tente outro fornecedor do Aurora. Um link retornado pode expirar ou falhar na reprodução mesmo com o serviço de busca disponível. Se a lista ficou aberta por algum tempo, atualize as fontes antes de tentar novamente.
 
 Se os três não aparecerem, confira se o repositório e seus fornecedores estão ativados e atualize o repositório. Para relatar um problema, informe título, ano, temporada/episódio, versão do Nuvio e qual fornecedor foi usado. Não é necessário enviar chaves ou URLs de reprodução.
 
