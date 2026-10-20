@@ -5,8 +5,8 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const path = require('node:path');
 const root = path.join(__dirname,'..');
-const code = fs.readFileSync(path.join(root,'providers/aurora.js'),'utf8');
 const manifest = JSON.parse(fs.readFileSync(path.join(root,'manifest.json'),'utf8'));
+const code = fs.readFileSync(path.join(root,manifest.scrapers[0].filename),'utf8');
 
 function sandbox(scraperId, withTimers = false) {
   const calls = [], logs = [];
@@ -37,7 +37,9 @@ test('manifest references an existing deterministic JS bundle and independent su
     assert.equal(scraper.hasSettings,true);
     assert.deepEqual(scraper.supportedTypes,['movie','tv']);
     assert.ok(fs.existsSync(path.join(root,scraper.filename)));
+    assert.ok(scraper.filename.endsWith('-'+manifest.version+'.js'));
   }
+  assert.equal(code,fs.readFileSync(path.join(root,'providers/aurora.js'),'utf8'));
 });
 
 for(const scraper of manifest.scrapers) test('Nuvio module contract: '+scraper.id,async()=>{

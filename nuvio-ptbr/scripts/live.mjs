@@ -8,7 +8,8 @@ const root = fileURLToPath(new URL('..', import.meta.url));
 const args = process.argv.slice(2);
 const option = key => { const at = args.indexOf(key); return at < 0 ? undefined : args[at + 1]; };
 const sources = JSON.parse(await readFile(path.join(root,'src/sources.json'),'utf8'));
-const bundle = await readFile(path.join(root,'providers/aurora.js'),'utf8');
+const manifest = JSON.parse(await readFile(path.join(root,'manifest.json'),'utf8'));
+const bundle = await readFile(path.join(root,manifest.scrapers[0].filename),'utf8');
 const pkg = JSON.parse(await readFile(path.join(root,'package.json'),'utf8'));
 const matrix = args.includes('--matrix');
 const probe = args.includes('--probe');
@@ -77,7 +78,7 @@ async function checkManifest(source) {
 async function runCase(item,source) {
   // Run the distributed file, not a second implementation of its filtering.
   const host={
-    module:{exports:{}},SCRAPER_ID:'https://raw.githubusercontent.com/miguelrodriguesjj2020-hash/lumez/refs/heads/main/nuvio-ptbr/manifest.json:'+source.scraperId,SCRAPER_SETTINGS:{},
+    module:{exports:{}},SCRAPER_ID:'https://raw.githubusercontent.com/miguelrodriguesjj2020-hash/lumez/main/nuvio-ptbr/manifest.json:'+source.scraperId,SCRAPER_SETTINGS:{},
     fetch:(url,options)=>fetch(url,options),setTimeout,clearTimeout,AbortController,
     console:{log:()=>{}}
   };

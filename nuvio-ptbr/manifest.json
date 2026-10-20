@@ -9,7 +9,7 @@
       "name": "Aurora · BsCine",
       "description": "Áudio informado pela fonte; reprodução e variante não são garantidas. Filmes e episódios dos catálogos existentes.",
       "version": "1.0.1",
-      "filename": "providers/aurora.js",
+      "filename": "providers/aurora-1.0.1.js",
       "supportedTypes": [
         "movie",
         "tv"
@@ -32,7 +32,7 @@
       "name": "Aurora · King VOD",
       "description": "Áudio informado pela fonte; reprodução e variante não são garantidas. Filmes e episódios dos catálogos existentes.",
       "version": "1.0.1",
-      "filename": "providers/aurora.js",
+      "filename": "providers/aurora-1.0.1.js",
       "supportedTypes": [
         "movie",
         "tv"
@@ -55,7 +55,7 @@
       "name": "Aurora · FrostStream",
       "description": "Áudio informado pela fonte; reprodução e variante não são garantidas. Filmes e episódios dos catálogos existentes.",
       "version": "1.0.1",
-      "filename": "providers/aurora.js",
+      "filename": "providers/aurora-1.0.1.js",
       "supportedTypes": [
         "movie",
         "tv"

@@ -10,6 +10,7 @@ const pkg = JSON.parse(await read('package.json'));
 const sources = JSON.parse(await read('src/sources.json'));
 const core = await read('src/core.js');
 const provider = await read('src/provider.js');
+const versionedFilename = 'providers/aurora-' + pkg.version + '.js';
 if (!core.includes(`var VERSION = '${pkg.version}';`)) throw new Error('Version mismatch');
 if (new Set(sources.map(s => s.scraperId)).size !== sources.length) throw new Error('Duplicate scraper IDs');
 
@@ -22,13 +23,14 @@ const manifest = {
   scrapers: sources.map(source => ({
     id: source.scraperId, name: 'Aurora · ' + source.name,
     description: 'Áudio informado pela fonte; reprodução e variante não são garantidas. Filmes e episódios dos catálogos existentes.',
-    version: pkg.version, filename: 'providers/aurora.js', supportedTypes: ['movie', 'tv'],
+    version: pkg.version, filename: versionedFilename, supportedTypes: ['movie', 'tv'],
     enabled: true, hasSettings: true, contentLanguage: ['pt-BR', 'pt'],
     formats: ['hls', 'mp4', 'mkv'], supportsExternalPlayer: true
   }))
 };
 const outputs = new Map([
   ['providers/aurora.js', bundle],
+  [versionedFilename, bundle],
   ['manifest.json', JSON.stringify(manifest, null, 2) + '\n']
 ]);
 for (const [name, content] of outputs) {

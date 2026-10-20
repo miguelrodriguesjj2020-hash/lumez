@@ -7,7 +7,7 @@ Fornecedores de reprodução para os filmes e episódios dos seus catálogos exi
 No **Nuvio Mobile Full → Configurações → Plugins → Adicionar repositório**, cole:
 
 ```text
-https://raw.githubusercontent.com/miguelrodriguesjj2020-hash/lumez/refs/heads/main/nuvio-ptbr/manifest.json
+https://raw.githubusercontent.com/miguelrodriguesjj2020-hash/lumez/main/nuvio-ptbr/manifest.json
 ```
 
 Mantenha os três fornecedores do Aurora ativados. Abra um filme ou episódio pelo Cinemeta e procure **Aurora PT-BR** na seleção de fontes. Com a opção de agrupar por repositório ativada, eles aparecem juntos. O manifesto acima é de **Plugins**, não de Add-ons Stremio.
@@ -82,7 +82,7 @@ npm run verify
 npm run live -- --matrix --probe --require-results --output reports/live.json
 ```
 
-`build` gera o manifesto e `providers/aurora.js`; `check` detecta saída desatualizada. `test` testa o motor e o arquivo distribuído sem APIs Node no sandbox. `live` executa o arquivo distribuído com HTTP real e salva apenas relatório sem URLs. `--probe` lê no máximo 32 KiB por opção amostrada; não baixa filmes completos nem comprova o idioma falado. Redes corporativas com proxy podem exigir a configuração de proxy do Node.
+`build` gera o manifesto e um bundle com versão no nome (também mantém `providers/aurora.js` como alias). Isso evita misturar manifesto novo com JS antigo em cache. `check` detecta saída desatualizada. `test` testa o motor e o arquivo referenciado pelo manifesto sem APIs Node no sandbox. `live` executa esse arquivo com HTTP real e salva apenas relatório sem URLs. `--probe` lê no máximo 32 KiB por opção amostrada; não baixa filmes completos nem comprova o idioma falado. Redes corporativas com proxy podem exigir a configuração de proxy do Node.
 
 O workflow do GitHub verifica o build e os testes em cada mudança e faz uma consulta de fumaça de fontes públicas. Falhas externas aparecem no job de diagnóstico e não são transformadas em prova de reprodução.
 

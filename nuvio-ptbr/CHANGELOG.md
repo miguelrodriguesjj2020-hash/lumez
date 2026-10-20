@@ -4,6 +4,7 @@
 
 - Renova a consulta King VOD por uma chave de cache de um minuto. O teste real encontrou resposta HTTP em cache por até quatro horas contendo autorização de reprodução vencida; a consulta renovada retornou uma playlist válida. URLs e cookies recebidos continuam preservados.
 - Relatório HTTP identifica o hash do bundle e os códigos de falha de transporte.
+- Manifesto aponta para um arquivo JS com versão no nome para evitar mistura de versões no cache de distribuição.
 
 ## 1.0.0 · 2026-10-20
 

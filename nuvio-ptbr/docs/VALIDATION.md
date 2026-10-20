@@ -42,6 +42,8 @@ O Aurora agora renova essa consulta King VOD por uma chave de cache de um minuto
 
 O primeiro workflow independente no GitHub também aprovou os testes e o diagnóstico de fontes: [execução 39366227865](https://github.com/miguelrodriguesjj2020-hash/lumez/actions/runs/39366227865). Naquela rede, King VOD retornou playlist HTTP 200, BsCine excedeu o prazo de conexão de mídia e Frost não retornou opções. A aprovação do workflow exige resultado de busca para o caso testado; não significa que todas as fontes ou mídias passaram.
 
+A atualização 1.0.1 também passou pelos jobs de testes e diagnóstico na [execução 39366585750](https://github.com/miguelrodriguesjj2020-hash/lumez/actions/runs/39366585750). O manifesto referencia um nome de bundle com versão; `check` e os testes verificam esse arquivo e seu alias para evitar divergência na distribuição.
+
 ## Ainda depende do aparelho
 
 Instalação no Nuvio do usuário, início de reprodução de filme/episódio e conferência do áudio. Não foram marcados como aprovados. O comportamento de timeout e player também depende da build e da rede do aparelho.
