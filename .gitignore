@@ -1,0 +1,4 @@
+nuvio-ptbr/reports/
+nuvio-ptbr/node_modules/
+*.log
+.env

@@ -1,0 +1,77 @@
+{
+  "name": "Aurora PT-BR",
+  "version": "1.0.0",
+  "description": "Dublado e português informado por fontes independentes. Usa seus catálogos atuais.",
+  "author": "miguelrodriguesjj2020-hash",
+  "scrapers": [
+    {
+      "id": "aurora-ptbr-bscine-v1",
+      "name": "Aurora · BsCine",
+      "description": "Áudio informado pela fonte; reprodução e variante não são garantidas. Filmes e episódios dos catálogos existentes.",
+      "version": "1.0.0",
+      "filename": "providers/aurora.js",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "enabled": true,
+      "hasSettings": true,
+      "contentLanguage": [
+        "pt-BR",
+        "pt"
+      ],
+      "formats": [
+        "hls",
+        "mp4",
+        "mkv"
+      ],
+      "supportsExternalPlayer": true
+    },
+    {
+      "id": "aurora-ptbr-kingvod-v1",
+      "name": "Aurora · King VOD",
+      "description": "Áudio informado pela fonte; reprodução e variante não são garantidas. Filmes e episódios dos catálogos existentes.",
+      "version": "1.0.0",
+      "filename": "providers/aurora.js",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "enabled": true,
+      "hasSettings": true,
+      "contentLanguage": [
+        "pt-BR",
+        "pt"
+      ],
+      "formats": [
+        "hls",
+        "mp4",
+        "mkv"
+      ],
+      "supportsExternalPlayer": true
+    },
+    {
+      "id": "aurora-ptbr-frost-v1",
+      "name": "Aurora · FrostStream",
+      "description": "Áudio informado pela fonte; reprodução e variante não são garantidas. Filmes e episódios dos catálogos existentes.",
+      "version": "1.0.0",
+      "filename": "providers/aurora.js",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "enabled": true,
+      "hasSettings": true,
+      "contentLanguage": [
+        "pt-BR",
+        "pt"
+      ],
+      "formats": [
+        "hls",
+        "mp4",
+        "mkv"
+      ],
+      "supportsExternalPlayer": true
+    }
+  ]
+}

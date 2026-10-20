@@ -2,6 +2,6 @@
 
 ## Aurora PT-BR para Nuvio
 
-O projeto do fornecedor de reprodução PT-BR fica em [`nuvio-ptbr/`](nuvio-ptbr/).
+O fornecedor de reprodução PT-BR está em [`nuvio-ptbr/`](nuvio-ptbr/).
 
-Em desenvolvimento. O manifesto será publicado após os testes de contrato e de fontes. Os catálogos existentes do Nuvio, como Cinemeta, continuam sendo usados.
+Ele usa seus catálogos existentes, incluindo Cinemeta, e consulta serviços de reprodução independentes. Veja instalação, testes e limites no README do projeto.

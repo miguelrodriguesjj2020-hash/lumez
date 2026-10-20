@@ -1,0 +1,29 @@
+[
+  {
+    "id": "bscine",
+    "scraperId": "aurora-ptbr-bscine-v1",
+    "name": "BsCine",
+    "baseUrl": "https://bscine.alwaysdata.net",
+    "types": ["movie", "series"],
+    "idKinds": ["imdb"],
+    "dubLocale": "pt-BR"
+  },
+  {
+    "id": "kingvod",
+    "scraperId": "aurora-ptbr-kingvod-v1",
+    "name": "King VOD",
+    "baseUrl": "https://da5f663b4690-kingvod.baby-beamup.club",
+    "types": ["movie", "series"],
+    "idKinds": ["imdb"],
+    "dubLocale": "pt-BR"
+  },
+  {
+    "id": "frost",
+    "scraperId": "aurora-ptbr-frost-v1",
+    "name": "FrostStream",
+    "baseUrl": "https://froststream.cloutteam.com",
+    "types": ["movie", "series"],
+    "idKinds": ["imdb", "tmdb"],
+    "dubLocale": "pt-BR"
+  }
+]

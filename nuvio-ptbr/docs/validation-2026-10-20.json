@@ -1,0 +1,1404 @@
+{
+  "testedAt": "2026-10-20T03:45:00.016Z",
+  "version": "1.0.0",
+  "runtime": "v24.19.0",
+  "bundleSha256": "db6b3b05e66c2ff4af9dc156ed283353f947e654847819159cda7cb4ab06f730",
+  "test": "Distributed plugin in VM with real HTTP transport; no device playback",
+  "manifests": [
+    {
+      "source": "bscine",
+      "status": 200,
+      "id": "com.bsweb.bscine",
+      "version": "1.0.0",
+      "types": [
+        "movie",
+        "series"
+      ],
+      "usable": true
+    },
+    {
+      "source": "kingvod",
+      "status": 200,
+      "id": "org.kingvod.node",
+      "version": "1.0.1",
+      "types": [
+        "movie",
+        "series"
+      ],
+      "usable": true
+    },
+    {
+      "source": "frost",
+      "status": 200,
+      "id": "com.froststream",
+      "version": "2.2.8",
+      "types": [
+        "movie",
+        "series"
+      ],
+      "usable": true
+    }
+  ],
+  "results": [
+    {
+      "case": "Matrix",
+      "id": "tt0133093",
+      "type": "movie",
+      "source": "bscine",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "bscine",
+            "name": "BsCine",
+            "status": "ok",
+            "received": 1,
+            "accepted": 1,
+            "rejected": {},
+            "durationMs": 139
+          }
+        ],
+        "totals": {
+          "received": 1,
+          "accepted": 1,
+          "duplicates": 0,
+          "returned": 1
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt0133093",
+          "kind": "imdb",
+          "type": "movie",
+          "season": null,
+          "episode": null
+        },
+        "durationMs": 144
+      },
+      "audioLabels": [
+        "Dublado informado pela fonte"
+      ],
+      "qualities": [
+        "1080p"
+      ],
+      "probes": [
+        {
+          "result": "network-error",
+          "code": "UND_ERR_SOCKET"
+        }
+      ]
+    },
+    {
+      "case": "Matrix",
+      "id": "tt0133093",
+      "type": "movie",
+      "source": "kingvod",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "kingvod",
+            "name": "King VOD",
+            "status": "ok",
+            "received": 1,
+            "accepted": 1,
+            "rejected": {},
+            "durationMs": 35
+          }
+        ],
+        "totals": {
+          "received": 1,
+          "accepted": 1,
+          "duplicates": 0,
+          "returned": 1
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt0133093",
+          "kind": "imdb",
+          "type": "movie",
+          "season": null,
+          "episode": null
+        },
+        "durationMs": 39
+      },
+      "audioLabels": [
+        "Dublado informado pela fonte"
+      ],
+      "qualities": [
+        "unknown"
+      ],
+      "probes": [
+        {
+          "status": 410,
+          "result": "http-error"
+        }
+      ]
+    },
+    {
+      "case": "Matrix",
+      "id": "tt0133093",
+      "type": "movie",
+      "source": "frost",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "frost",
+            "name": "FrostStream",
+            "status": "ok",
+            "received": 6,
+            "accepted": 3,
+            "rejected": {
+              "subtitled-only": 3
+            },
+            "durationMs": 471
+          }
+        ],
+        "totals": {
+          "received": 6,
+          "accepted": 3,
+          "duplicates": 0,
+          "returned": 3
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt0133093",
+          "kind": "imdb",
+          "type": "movie",
+          "season": null,
+          "episode": null
+        },
+        "durationMs": 474
+      },
+      "audioLabels": [
+        "Português informado; variante incerta"
+      ],
+      "qualities": [
+        "1080p"
+      ],
+      "probes": [
+        {
+          "result": "network-error",
+          "code": "UND_ERR_SOCKET"
+        }
+      ]
+    },
+    {
+      "case": "Frozen",
+      "id": "tt2294629",
+      "type": "movie",
+      "source": "bscine",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "bscine",
+            "name": "BsCine",
+            "status": "ok",
+            "received": 1,
+            "accepted": 1,
+            "rejected": {},
+            "durationMs": 4314
+          }
+        ],
+        "totals": {
+          "received": 1,
+          "accepted": 1,
+          "duplicates": 0,
+          "returned": 1
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt2294629",
+          "kind": "imdb",
+          "type": "movie",
+          "season": null,
+          "episode": null
+        },
+        "durationMs": 4316
+      },
+      "audioLabels": [
+        "Dublado informado pela fonte"
+      ],
+      "qualities": [
+        "1080p"
+      ],
+      "probes": [
+        {
+          "result": "network-error",
+          "code": "UND_ERR_SOCKET"
+        }
+      ]
+    },
+    {
+      "case": "Frozen",
+      "id": "tt2294629",
+      "type": "movie",
+      "source": "kingvod",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "kingvod",
+            "name": "King VOD",
+            "status": "ok",
+            "received": 1,
+            "accepted": 1,
+            "rejected": {},
+            "durationMs": 5983
+          }
+        ],
+        "totals": {
+          "received": 1,
+          "accepted": 1,
+          "duplicates": 0,
+          "returned": 1
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt2294629",
+          "kind": "imdb",
+          "type": "movie",
+          "season": null,
+          "episode": null
+        },
+        "durationMs": 5984
+      },
+      "audioLabels": [
+        "Dublado informado pela fonte"
+      ],
+      "qualities": [
+        "unknown"
+      ],
+      "probes": [
+        {
+          "status": 410,
+          "result": "http-error"
+        }
+      ]
+    },
+    {
+      "case": "Frozen",
+      "id": "tt2294629",
+      "type": "movie",
+      "source": "frost",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "empty",
+        "sources": [
+          {
+            "id": "frost",
+            "name": "FrostStream",
+            "status": "filtered",
+            "received": 1,
+            "accepted": 0,
+            "rejected": {
+              "subtitled-only": 1
+            },
+            "durationMs": 4530
+          }
+        ],
+        "totals": {
+          "received": 1,
+          "accepted": 0,
+          "duplicates": 0,
+          "returned": 0
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt2294629",
+          "kind": "imdb",
+          "type": "movie",
+          "season": null,
+          "episode": null
+        },
+        "durationMs": 4531
+      },
+      "audioLabels": [],
+      "qualities": [],
+      "probes": []
+    },
+    {
+      "case": "Um Sonho de Liberdade",
+      "id": "tt0111161",
+      "type": "movie",
+      "source": "bscine",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "bscine",
+            "name": "BsCine",
+            "status": "ok",
+            "received": 1,
+            "accepted": 1,
+            "rejected": {},
+            "durationMs": 136
+          }
+        ],
+        "totals": {
+          "received": 1,
+          "accepted": 1,
+          "duplicates": 0,
+          "returned": 1
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt0111161",
+          "kind": "imdb",
+          "type": "movie",
+          "season": null,
+          "episode": null
+        },
+        "durationMs": 136
+      },
+      "audioLabels": [
+        "Dublado informado pela fonte"
+      ],
+      "qualities": [
+        "1080p"
+      ],
+      "probes": [
+        {
+          "result": "network-error",
+          "code": "UND_ERR_SOCKET"
+        }
+      ]
+    },
+    {
+      "case": "Um Sonho de Liberdade",
+      "id": "tt0111161",
+      "type": "movie",
+      "source": "kingvod",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "kingvod",
+            "name": "King VOD",
+            "status": "ok",
+            "received": 1,
+            "accepted": 1,
+            "rejected": {},
+            "durationMs": 1453
+          }
+        ],
+        "totals": {
+          "received": 1,
+          "accepted": 1,
+          "duplicates": 0,
+          "returned": 1
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt0111161",
+          "kind": "imdb",
+          "type": "movie",
+          "season": null,
+          "episode": null
+        },
+        "durationMs": 1453
+      },
+      "audioLabels": [
+        "Dublado informado pela fonte"
+      ],
+      "qualities": [
+        "unknown"
+      ],
+      "probes": [
+        {
+          "status": 410,
+          "result": "http-error"
+        }
+      ]
+    },
+    {
+      "case": "Um Sonho de Liberdade",
+      "id": "tt0111161",
+      "type": "movie",
+      "source": "frost",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "frost",
+            "name": "FrostStream",
+            "status": "ok",
+            "received": 3,
+            "accepted": 3,
+            "rejected": {},
+            "durationMs": 3926
+          }
+        ],
+        "totals": {
+          "received": 3,
+          "accepted": 3,
+          "duplicates": 0,
+          "returned": 3
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt0111161",
+          "kind": "imdb",
+          "type": "movie",
+          "season": null,
+          "episode": null
+        },
+        "durationMs": 3926
+      },
+      "audioLabels": [
+        "Português informado; variante incerta"
+      ],
+      "qualities": [
+        "720p"
+      ],
+      "probes": [
+        {
+          "result": "network-error",
+          "code": "UND_ERR_SOCKET"
+        }
+      ]
+    },
+    {
+      "case": "Interestelar",
+      "id": "tt0816692",
+      "type": "movie",
+      "source": "bscine",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "bscine",
+            "name": "BsCine",
+            "status": "ok",
+            "received": 1,
+            "accepted": 1,
+            "rejected": {},
+            "durationMs": 143
+          }
+        ],
+        "totals": {
+          "received": 1,
+          "accepted": 1,
+          "duplicates": 0,
+          "returned": 1
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt0816692",
+          "kind": "imdb",
+          "type": "movie",
+          "season": null,
+          "episode": null
+        },
+        "durationMs": 143
+      },
+      "audioLabels": [
+        "Dublado informado pela fonte"
+      ],
+      "qualities": [
+        "1080p"
+      ],
+      "probes": [
+        {
+          "result": "network-error",
+          "code": "UND_ERR_SOCKET"
+        }
+      ]
+    },
+    {
+      "case": "Interestelar",
+      "id": "tt0816692",
+      "type": "movie",
+      "source": "kingvod",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "kingvod",
+            "name": "King VOD",
+            "status": "ok",
+            "received": 1,
+            "accepted": 1,
+            "rejected": {},
+            "durationMs": 504
+          }
+        ],
+        "totals": {
+          "received": 1,
+          "accepted": 1,
+          "duplicates": 0,
+          "returned": 1
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt0816692",
+          "kind": "imdb",
+          "type": "movie",
+          "season": null,
+          "episode": null
+        },
+        "durationMs": 504
+      },
+      "audioLabels": [
+        "Dublado informado pela fonte"
+      ],
+      "qualities": [
+        "unknown"
+      ],
+      "probes": [
+        {
+          "status": 200,
+          "result": "hls-playlist",
+          "bytesRead": 32768,
+          "audioLanguages": []
+        }
+      ]
+    },
+    {
+      "case": "Interestelar",
+      "id": "tt0816692",
+      "type": "movie",
+      "source": "frost",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "frost",
+            "name": "FrostStream",
+            "status": "ok",
+            "received": 8,
+            "accepted": 7,
+            "rejected": {
+              "subtitled-only": 1
+            },
+            "durationMs": 435
+          }
+        ],
+        "totals": {
+          "received": 8,
+          "accepted": 7,
+          "duplicates": 0,
+          "returned": 7
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt0816692",
+          "kind": "imdb",
+          "type": "movie",
+          "season": null,
+          "episode": null
+        },
+        "durationMs": 435
+      },
+      "audioLabels": [
+        "Português informado; variante incerta"
+      ],
+      "qualities": [
+        "1080p",
+        "2160p",
+        "720p"
+      ],
+      "probes": [
+        {
+          "result": "network-error",
+          "code": "UND_ERR_SOCKET"
+        }
+      ]
+    },
+    {
+      "case": "Super Mario Bros. O Filme",
+      "id": "tt6718170",
+      "type": "movie",
+      "source": "bscine",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "bscine",
+            "name": "BsCine",
+            "status": "ok",
+            "received": 1,
+            "accepted": 1,
+            "rejected": {},
+            "durationMs": 136
+          }
+        ],
+        "totals": {
+          "received": 1,
+          "accepted": 1,
+          "duplicates": 0,
+          "returned": 1
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt6718170",
+          "kind": "imdb",
+          "type": "movie",
+          "season": null,
+          "episode": null
+        },
+        "durationMs": 136
+      },
+      "audioLabels": [
+        "Dublado informado pela fonte"
+      ],
+      "qualities": [
+        "1080p"
+      ],
+      "probes": [
+        {
+          "result": "network-error",
+          "code": "UND_ERR_SOCKET"
+        }
+      ]
+    },
+    {
+      "case": "Super Mario Bros. O Filme",
+      "id": "tt6718170",
+      "type": "movie",
+      "source": "kingvod",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "kingvod",
+            "name": "King VOD",
+            "status": "ok",
+            "received": 1,
+            "accepted": 1,
+            "rejected": {},
+            "durationMs": 55
+          }
+        ],
+        "totals": {
+          "received": 1,
+          "accepted": 1,
+          "duplicates": 0,
+          "returned": 1
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt6718170",
+          "kind": "imdb",
+          "type": "movie",
+          "season": null,
+          "episode": null
+        },
+        "durationMs": 55
+      },
+      "audioLabels": [
+        "Dublado informado pela fonte"
+      ],
+      "qualities": [
+        "unknown"
+      ],
+      "probes": [
+        {
+          "status": 200,
+          "result": "hls-playlist",
+          "bytesRead": 29079,
+          "audioLanguages": []
+        }
+      ]
+    },
+    {
+      "case": "Super Mario Bros. O Filme",
+      "id": "tt6718170",
+      "type": "movie",
+      "source": "frost",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "frost",
+            "name": "FrostStream",
+            "status": "ok",
+            "received": 11,
+            "accepted": 7,
+            "rejected": {
+              "subtitled-only": 4
+            },
+            "durationMs": 355
+          }
+        ],
+        "totals": {
+          "received": 11,
+          "accepted": 7,
+          "duplicates": 0,
+          "returned": 7
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt6718170",
+          "kind": "imdb",
+          "type": "movie",
+          "season": null,
+          "episode": null
+        },
+        "durationMs": 355
+      },
+      "audioLabels": [
+        "Português informado; variante incerta"
+      ],
+      "qualities": [
+        "2160p",
+        "720p"
+      ],
+      "probes": [
+        {
+          "result": "network-error",
+          "code": "UND_ERR_SOCKET"
+        }
+      ]
+    },
+    {
+      "case": "Divertida Mente 2",
+      "id": "tt22022452",
+      "type": "movie",
+      "source": "bscine",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "bscine",
+            "name": "BsCine",
+            "status": "ok",
+            "received": 2,
+            "accepted": 1,
+            "rejected": {
+              "subtitled-only": 1
+            },
+            "durationMs": 146
+          }
+        ],
+        "totals": {
+          "received": 2,
+          "accepted": 1,
+          "duplicates": 0,
+          "returned": 1
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt22022452",
+          "kind": "imdb",
+          "type": "movie",
+          "season": null,
+          "episode": null
+        },
+        "durationMs": 146
+      },
+      "audioLabels": [
+        "Dublado informado pela fonte"
+      ],
+      "qualities": [
+        "1080p"
+      ],
+      "probes": [
+        {
+          "result": "network-error",
+          "code": "UND_ERR_SOCKET"
+        }
+      ]
+    },
+    {
+      "case": "Divertida Mente 2",
+      "id": "tt22022452",
+      "type": "movie",
+      "source": "kingvod",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "kingvod",
+            "name": "King VOD",
+            "status": "ok",
+            "received": 1,
+            "accepted": 1,
+            "rejected": {},
+            "durationMs": 40
+          }
+        ],
+        "totals": {
+          "received": 1,
+          "accepted": 1,
+          "duplicates": 0,
+          "returned": 1
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt22022452",
+          "kind": "imdb",
+          "type": "movie",
+          "season": null,
+          "episode": null
+        },
+        "durationMs": 40
+      },
+      "audioLabels": [
+        "Dublado informado pela fonte"
+      ],
+      "qualities": [
+        "unknown"
+      ],
+      "probes": [
+        {
+          "status": 200,
+          "result": "hls-playlist",
+          "bytesRead": 30665,
+          "audioLanguages": []
+        }
+      ]
+    },
+    {
+      "case": "Divertida Mente 2",
+      "id": "tt22022452",
+      "type": "movie",
+      "source": "frost",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "frost",
+            "name": "FrostStream",
+            "status": "ok",
+            "received": 12,
+            "accepted": 6,
+            "rejected": {
+              "subtitled-only": 6
+            },
+            "durationMs": 424
+          }
+        ],
+        "totals": {
+          "received": 12,
+          "accepted": 6,
+          "duplicates": 0,
+          "returned": 6
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt22022452",
+          "kind": "imdb",
+          "type": "movie",
+          "season": null,
+          "episode": null
+        },
+        "durationMs": 424
+      },
+      "audioLabels": [
+        "Português informado; variante incerta"
+      ],
+      "qualities": [
+        "1080p",
+        "2160p"
+      ],
+      "probes": [
+        {
+          "result": "network-error",
+          "code": "UND_ERR_SOCKET"
+        }
+      ]
+    },
+    {
+      "case": "Breaking Bad S01E01",
+      "id": "tt0903747:1:1",
+      "type": "series",
+      "source": "bscine",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "bscine",
+            "name": "BsCine",
+            "status": "ok",
+            "received": 1,
+            "accepted": 1,
+            "rejected": {},
+            "durationMs": 134
+          }
+        ],
+        "totals": {
+          "received": 1,
+          "accepted": 1,
+          "duplicates": 0,
+          "returned": 1
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt0903747",
+          "kind": "imdb",
+          "type": "series",
+          "season": 1,
+          "episode": 1
+        },
+        "durationMs": 134
+      },
+      "audioLabels": [
+        "Dublado informado pela fonte"
+      ],
+      "qualities": [
+        "1080p"
+      ],
+      "probes": [
+        {
+          "result": "network-error",
+          "code": "UND_ERR_SOCKET"
+        }
+      ]
+    },
+    {
+      "case": "Breaking Bad S01E01",
+      "id": "tt0903747:1:1",
+      "type": "series",
+      "source": "kingvod",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "kingvod",
+            "name": "King VOD",
+            "status": "ok",
+            "received": 1,
+            "accepted": 1,
+            "rejected": {},
+            "durationMs": 47
+          }
+        ],
+        "totals": {
+          "received": 1,
+          "accepted": 1,
+          "duplicates": 0,
+          "returned": 1
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt0903747",
+          "kind": "imdb",
+          "type": "series",
+          "season": 1,
+          "episode": 1
+        },
+        "durationMs": 47
+      },
+      "audioLabels": [
+        "Dublado informado pela fonte"
+      ],
+      "qualities": [
+        "unknown"
+      ],
+      "probes": [
+        {
+          "status": 200,
+          "result": "hls-playlist",
+          "bytesRead": 18289,
+          "audioLanguages": []
+        }
+      ]
+    },
+    {
+      "case": "Breaking Bad S01E01",
+      "id": "tt0903747:1:1",
+      "type": "series",
+      "source": "frost",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "frost",
+            "name": "FrostStream",
+            "status": "ok",
+            "received": 2,
+            "accepted": 2,
+            "rejected": {},
+            "durationMs": 380
+          }
+        ],
+        "totals": {
+          "received": 2,
+          "accepted": 2,
+          "duplicates": 0,
+          "returned": 2
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt0903747",
+          "kind": "imdb",
+          "type": "series",
+          "season": 1,
+          "episode": 1
+        },
+        "durationMs": 380
+      },
+      "audioLabels": [
+        "Português informado; variante incerta"
+      ],
+      "qualities": [
+        "720p"
+      ],
+      "probes": [
+        {
+          "result": "network-error",
+          "code": "UND_ERR_SOCKET"
+        }
+      ]
+    },
+    {
+      "case": "Stranger Things S01E01",
+      "id": "tt4574334:1:1",
+      "type": "series",
+      "source": "bscine",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "bscine",
+            "name": "BsCine",
+            "status": "ok",
+            "received": 1,
+            "accepted": 1,
+            "rejected": {},
+            "durationMs": 134
+          }
+        ],
+        "totals": {
+          "received": 1,
+          "accepted": 1,
+          "duplicates": 0,
+          "returned": 1
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt4574334",
+          "kind": "imdb",
+          "type": "series",
+          "season": 1,
+          "episode": 1
+        },
+        "durationMs": 135
+      },
+      "audioLabels": [
+        "Dublado informado pela fonte"
+      ],
+      "qualities": [
+        "1080p"
+      ],
+      "probes": [
+        {
+          "result": "network-error",
+          "code": "UND_ERR_SOCKET"
+        }
+      ]
+    },
+    {
+      "case": "Stranger Things S01E01",
+      "id": "tt4574334:1:1",
+      "type": "series",
+      "source": "kingvod",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "kingvod",
+            "name": "King VOD",
+            "status": "ok",
+            "received": 1,
+            "accepted": 1,
+            "rejected": {},
+            "durationMs": 1014
+          }
+        ],
+        "totals": {
+          "received": 1,
+          "accepted": 1,
+          "duplicates": 0,
+          "returned": 1
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt4574334",
+          "kind": "imdb",
+          "type": "series",
+          "season": 1,
+          "episode": 1
+        },
+        "durationMs": 1014
+      },
+      "audioLabels": [
+        "Dublado informado pela fonte"
+      ],
+      "qualities": [
+        "unknown"
+      ],
+      "probes": [
+        {
+          "status": 200,
+          "result": "hls-playlist",
+          "bytesRead": 14987,
+          "audioLanguages": []
+        }
+      ]
+    },
+    {
+      "case": "Stranger Things S01E01",
+      "id": "tt4574334:1:1",
+      "type": "series",
+      "source": "frost",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "frost",
+            "name": "FrostStream",
+            "status": "ok",
+            "received": 4,
+            "accepted": 3,
+            "rejected": {
+              "subtitled-only": 1
+            },
+            "durationMs": 3331
+          }
+        ],
+        "totals": {
+          "received": 4,
+          "accepted": 3,
+          "duplicates": 0,
+          "returned": 3
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt4574334",
+          "kind": "imdb",
+          "type": "series",
+          "season": 1,
+          "episode": 1
+        },
+        "durationMs": 3331
+      },
+      "audioLabels": [
+        "Português informado; variante incerta"
+      ],
+      "qualities": [
+        "1080p",
+        "720p"
+      ],
+      "probes": [
+        {
+          "result": "network-error",
+          "code": "UND_ERR_SOCKET"
+        }
+      ]
+    },
+    {
+      "case": "The Last of Us S01E01",
+      "id": "tt3581920:1:1",
+      "type": "series",
+      "source": "bscine",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "bscine",
+            "name": "BsCine",
+            "status": "ok",
+            "received": 1,
+            "accepted": 1,
+            "rejected": {},
+            "durationMs": 134
+          }
+        ],
+        "totals": {
+          "received": 1,
+          "accepted": 1,
+          "duplicates": 0,
+          "returned": 1
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt3581920",
+          "kind": "imdb",
+          "type": "series",
+          "season": 1,
+          "episode": 1
+        },
+        "durationMs": 135
+      },
+      "audioLabels": [
+        "Dublado informado pela fonte"
+      ],
+      "qualities": [
+        "1080p"
+      ],
+      "probes": [
+        {
+          "result": "network-error",
+          "code": "UND_ERR_SOCKET"
+        }
+      ]
+    },
+    {
+      "case": "The Last of Us S01E01",
+      "id": "tt3581920:1:1",
+      "type": "series",
+      "source": "kingvod",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "kingvod",
+            "name": "King VOD",
+            "status": "ok",
+            "received": 1,
+            "accepted": 1,
+            "rejected": {},
+            "durationMs": 33
+          }
+        ],
+        "totals": {
+          "received": 1,
+          "accepted": 1,
+          "duplicates": 0,
+          "returned": 1
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt3581920",
+          "kind": "imdb",
+          "type": "series",
+          "season": 1,
+          "episode": 1
+        },
+        "durationMs": 33
+      },
+      "audioLabels": [
+        "Dublado informado pela fonte"
+      ],
+      "qualities": [
+        "unknown"
+      ],
+      "probes": [
+        {
+          "status": 200,
+          "result": "hls-playlist",
+          "bytesRead": 25361,
+          "audioLanguages": []
+        }
+      ]
+    },
+    {
+      "case": "The Last of Us S01E01",
+      "id": "tt3581920:1:1",
+      "type": "series",
+      "source": "frost",
+      "diagnostics": {
+        "version": "1.0.0",
+        "status": "ok",
+        "sources": [
+          {
+            "id": "frost",
+            "name": "FrostStream",
+            "status": "ok",
+            "received": 4,
+            "accepted": 3,
+            "rejected": {
+              "subtitled-only": 1
+            },
+            "durationMs": 401
+          }
+        ],
+        "totals": {
+          "received": 4,
+          "accepted": 3,
+          "duplicates": 0,
+          "returned": 3
+        },
+        "logicalTimeout": true,
+        "cancellation": "host-dependent",
+        "request": {
+          "id": "tt3581920",
+          "kind": "imdb",
+          "type": "series",
+          "season": 1,
+          "episode": 1
+        },
+        "durationMs": 401
+      },
+      "audioLabels": [
+        "Português informado; variante incerta"
+      ],
+      "qualities": [
+        "1080p",
+        "720p"
+      ],
+      "probes": [
+        {
+          "result": "network-error",
+          "code": "UND_ERR_SOCKET"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "cases": 9,
+    "sourceRequests": 27,
+    "casesWithResults": 9,
+    "sourceResponsesWithResults": 26,
+    "returnedStreams": 52,
+    "mediaSamples": {
+      "network-error": 17,
+      "http-error": 3,
+      "hls-playlist": 6
+    }
+  }
+}
